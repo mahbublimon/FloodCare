@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloodCare - Damage Assessment</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="navbar_footer.js"></script>
+</head>
+<body>
+    <!-- Navbar and Footer are added dynamically via navbar_footer.js -->
+
+    <!-- Main Content -->
+    <main>
+        <h1>Damage Assessment</h1>
+        
+        <!-- 7 Rows of Content -->
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="property">Property Damage:</label>
+                        <input type="text" class="form-control" id="property" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="crops">Crop Damage:</label>
+                        <input type="text" class="form-control" id="crops" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Government Schemes</h3>
+                <ul>
+                    <li>Flood Relief Fund</li>
+                    <li>Crop Insurance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h3>How We Help</h3>
+                <p>We assist in assessing damage and connecting you with resources for recovery.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
