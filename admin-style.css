@@ -1,0 +1,38 @@
+body {
+    font-family: "Times New Roman", serif;
+}
+
+#wrapper {
+    display: flex;
+}
+
+#sidebar-wrapper {
+    width: 250px;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+#menu-toggle {
+    margin-right: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #f8f9fa;
+}

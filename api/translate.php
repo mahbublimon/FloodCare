@@ -1,35 +1,33 @@
 <?php
-include "config.php";
 header('Content-Type: application/json');
 
-$text = isset($_POST['text']) ? $_POST['text'] : '';
-if (!$text) {
-    echo json_encode(["status" => "error", "message" => "No text provided"]);
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $text = $_POST['text'] ?? '';
+    $to = $_POST['to'] ?? 'bn'; // Default to Bangla
 
-// Use LibreTranslate Free API
-$data = [
-    "q" => $text,
-    "source" => "en",
-    "target" => "bn",
-    "format" => "text"
-];
+    if (empty($text)) {
+        echo json_encode(["error" => "No text provided"]);
+        exit;
+    }
 
-$options = [
-    "http" => [
-        "header" => "Content-Type: application/json",
-        "method" => "POST",
-        "content" => json_encode($data)
-    ]
-];
+    $api_url = "https://libretranslate.com/translate";
+    $data = [
+        'q' => $text,
+        'source' => 'auto',
+        'target' => $to,
+        'format' => 'text'
+    ];
 
-$context = stream_context_create($options);
-$response = file_get_contents(LIBRETRANSLATE_URL, false, $context);
+    $options = [
+        'http' => [
+            'header'  => "Content-Type: application/x-www-form-urlencoded",
+            'method'  => 'POST',
+            'content' => http_build_query($data),
+        ]
+    ];
+    $context  = stream_context_create($options);
+    $response = file_get_contents($api_url, false, $context);
 
-if ($response) {
     echo $response;
-} else {
-    echo json_encode(["status" => "error", "message" => "Translation failed"]);
 }
 ?>

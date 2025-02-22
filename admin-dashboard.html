@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Flood Care</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .card-body {
+            padding: 20px;
+        }
+        .card-header {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <a class="navbar-brand" href="#">Flood Care Admin</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="admin_donations.html">Donations</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="admin_volunteers.html">Volunteers</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="admin_reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Donation Overview Card -->
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-4">
+                    <div class="card-header">Total Donations</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$100,000</h5>
+                        <p class="card-text">Total donations received so far for flood relief.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pending Donations Card -->
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-4">
+                    <div class="card-header">Pending Donations</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$25,000</h5>
+                        <p class="card-text">Amount pending approval for donation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Volunteer Requests Card -->
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-4">
+                    <div class="card-header">Volunteer Requests</div>
+                    <div class="card-body">
+                        <h5 class="card-title">50</h5>
+                        <p class="card-text">Pending requests for volunteers to approve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Volunteers Table -->
+        <div class="card mb-4">
+            <div class="card-header bg-danger text-white">
+                Total Volunteers
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>John Doe</td>
+                            <td>johndoe@example.com</td>
+                            <td>+880123456789</td>
+                            <td><span class="badge bg-success">Approved</span></td>
+                            <td><button class="btn btn-warning btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jane Smith</td>
+                            <td>janesmith@example.com</td>
+                            <td>+880987654321</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                            <td><button class="btn btn-success btn-sm">Approve</button> <button class="btn btn-danger btn-sm">Reject</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Michael Brown</td>
+                            <td>michaelb@example.com</td>
+                            <td>+880112233445</td>
+                            <td><span class="badge bg-danger">Rejected</span></td>
+                            <td><button class="btn btn-warning btn-sm">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pending Donation Requests Table -->
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                Pending Donation Requests
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Donor Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Michael Lee</td>
+                            <td>$1,000</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                            <td><button class="btn btn-success btn-sm">Approve</button> <button class="btn btn-danger btn-sm">Reject</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Linda White</td>
+                            <td>$5,000</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                            <td><button class="btn btn-success btn-sm">Approve</button> <button class="btn btn-danger btn-sm">Reject</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Chris Green</td>
+                            <td>$2,500</td>
+                            <td><span class="badge bg-danger">Rejected</span></td>
+                            <td><button class="btn btn-warning btn-sm">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
